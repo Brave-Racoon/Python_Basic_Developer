@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "hm3"
+version = "1.0"
+description = ""
+authors = ["AVL"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = "^0.27.0.post1"
+pydantic = "^2.5.3"
+fastapi = "^0.109.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
