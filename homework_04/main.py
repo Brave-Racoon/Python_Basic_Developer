@@ -68,8 +68,8 @@ async def async_main():
                          'body': item['body']} for item in posts_data if 'userId' in item
                         and 'id' in item and 'title' in item and 'body' in item]
 
-    print("Users_data:", users_data_short)
-    print("Posts_data:", posts_data_short)
+    # print("Users_data:", users_data_short)
+    # print("Posts_data:", posts_data_short)
 
     async with Session() as session:
         await init_models()
