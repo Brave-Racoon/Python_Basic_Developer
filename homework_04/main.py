@@ -14,22 +14,13 @@
 """
 
 import asyncio
-import aiohttp
-# from sqlalchemy.ext.asyncio import AsyncSession
 from typing_extensions import List
 import jsonplaceholder_requests
+from jsonplaceholder_requests import fetch_api
 from sqlalchemy.ext.asyncio import AsyncSession
 from models import Base, engine, User, Post, Session
 
 
-async def fetch_api(url: str) -> dict:
-    async with aiohttp.ClientSession() as mysession:
-        response = await mysession.get(url)
-        data = await response.json()
-        return data
-
-
-# https://stackoverflow.com/questions/68230481/sqlalchemy-attributeerror-asyncengine-object-has-no-attribute-run-ddl-visit
 async def init_models():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.drop_all)
@@ -56,8 +47,6 @@ async def async_main():
     posts_data: List[dict]
     posts_data_short: List[dict]
 
-    # users_data, posts_data = await asyncio.gather(get_data_from_url(jsonplaceholder_requests.USERS_DATA_URL),
-    #                                               get_data_from_url(jsonplaceholder_requests.POSTS_DATA_URL))
     users_data, posts_data = await asyncio.gather(fetch_api(jsonplaceholder_requests.USERS_DATA_URL),
                                                   fetch_api(jsonplaceholder_requests.POSTS_DATA_URL))
 
@@ -67,9 +56,6 @@ async def async_main():
     posts_data_short = [{'userId': item['userId'], 'id': item['id'], 'title': item['title'],
                          'body': item['body']} for item in posts_data if 'userId' in item
                         and 'id' in item and 'title' in item and 'body' in item]
-
-    # print("Users_data:", users_data_short)
-    # print("Posts_data:", posts_data_short)
 
     async with Session() as session:
         await init_models()
