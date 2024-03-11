@@ -1,18 +1,17 @@
 [tool.poetry]
-name = "hm3"
-version = "1.0"
+name = "HomeWork 05"
+version = "0.1.0"
 description = ""
-authors = ["AVL"]
-readme = "README.md"
+authors = ["Andrey"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-uvicorn = "^0.27.0.post1"
-pydantic = "^2.5.3"
-fastapi = "^0.109.0"
-flask-migrate = "^4.0.6"
+flask = "^3.0.2"
+flask-sqlalchemy = "^3.1.1"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+# poetry install --no-root
+# poetry add flask-sqlalchemy

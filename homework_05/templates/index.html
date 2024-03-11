@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Index
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+  <h4
+    id="h444-header"
+    class="my-2"
+  >Homework 05 Flask+Bootstrap test app</h4>
+
+  <div>
+    <div id="span-text-clicked-times"
+         class="text-upper-case"
+    >Clicked times: <span id="clicked-times">0</span>
+    </div>
+    <button
+      id="btn-click"
+      class="btn btn-outline-success"
+    >Got it!
+    </button>
+  </div>
+
+  <script>
+    const btnClick = document.getElementById('btn-click')
+    const clickedTimesSpan = document.getElementById('clicked-times')
+    let clickCount = 0
+
+    function increaseAndShowClicks() {
+      clickCount += 1
+      clickedTimesSpan.innerText = clickCount.toString()
+    }
+
+    btnClick.addEventListener('click', increaseAndShowClicks)
+  </script>
+{% endblock %}

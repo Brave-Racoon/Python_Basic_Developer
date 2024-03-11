@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Index
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+  <h3
+    id="main-header"
+    class="my-2"
+  >Домашнее задание. Веб-приложение на Flask</h3>
+
+  <h4>Описание/Пошаговая инструкция выполнения домашнего задания</h4>
+
+    <p>
+        <li>скопируйте папку homework_05</li>
+        <li>используйте Flask</li>
+        <li>в модуле app создайте базовое приложение на Flask</li>
+        <li>создайте index view /</li>
+        <li>добавьте страницу /about/, добавьте туда текст</li>
+        <li>создайте базовый шаблон (используйте
+            <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template"
+               target="_blank">https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template</a>)</li>
+        <li>в базовый шаблон подключите статику Bootstrap 5 (подключите стили), примените стили Bootstrap</li>
+        <li>в базовый шаблон добавьте навигационную панель nav (<a href="https://getbootstrap.com/docs/5.0/components/navbar/"
+                                                                   target="_blank">https://getbootstrap.com/docs/5.0/components/navbar/</a>)</li>
+        <li>в навигационную панель добавьте ссылки на главную страницу / и на страницу /about/ при помощи url_for</li>
+        <li>добавьте новые зависимости в файл requirements.txt в корне проекта
+    (лучше вручную, но можно командой pip freeze > requirements.txt, тогда обязательно проверьте, что туда попало, и удалите лишнее)</li>
+    <p></p>
+
+    <a
+      href="{{ url_for('index') }}"
+    >Back</a>
+{% endblock %}
