@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Product #{{ product.id }}
+{% endblock %}
+
+{% block body %}
+  {#<h3>#{{ product.id }}  {{ product.title }}  details:</h3>#}
+  <h3>{{ product.title }}  details:</h3>
+  <h5>Description: {{product.description}}</h5>
+  <h5>Price: {{product.price}}</h5>
+  <h5>Discount: {{product.discountPercentage}}</h5>
+  <h5>Rating: {{product.rating}}</h5>
+  <h5>In stock: {{product.stock}}</h5>
+  <h5>Brand: {{product.brand}}</h5>
+    {#<span
+      class="d-inline-block"
+      tabindex="0"
+      data-bs-toggle="tooltip"
+      data-bs-title="Update feature is not ready yet"
+    >
+    <a
+      class="btn btn-outline-success disabled"
+      href="#"
+    >Update</a>
+    </span>#}
+    <a
+      class="btn btn-outline-danger"
+      href="{{ url_for('products_implement.delete', product_id=product.id) }}"
+    >Delete</a>
+  {% include 'products/back-to-products-list.html' %}
+{% endblock %}

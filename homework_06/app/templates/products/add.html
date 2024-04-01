@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Add product
+{% endblock %}
+
+{% block body %}
+  <h3>Add a new product</h3>
+
+  <form method="post">
+    <div class="mb-3">
+      <label
+        for="product-name-id"
+        class="form-label"
+      >Product name:</label>
+      <input
+        type="text"
+        maxlength="32"
+        class="form-control"
+        id="product-name-id"
+        name="product-name"
+        placeholder="Desktop"
+        required
+      >
+      <label
+        for="descr-name-id"
+        class="form-label"
+      >Product description:</label>
+      <input
+        type="text"
+        maxlength="32"
+        class="form-control"
+        id="descr-name-id"
+        name="product-descr"
+        placeholder="Description text"
+        required
+      >
+      <label
+        for="price-name-id"
+        class="form-label"
+      >Price:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price-name-id"
+        name="product-price"
+        min="1"
+        placeholder="Price"
+        required
+      >
+      <label
+        for="discountPercentage-name-id"
+        class="form-label"
+      >Discount %:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="discountPercentage-name-id"
+        name="product-discount"
+        min="0"
+        step="0.01"
+        placeholder="0.00"
+        required
+      >
+      <label
+        for="rating-name-id"
+        class="form-label"
+      >Rating:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="rating-name-id"
+        name="product-rating"
+        min="0"
+        step="0.01"
+        placeholder="0.00"
+        required
+      >
+      <label
+        for="stock-name-id"
+        class="form-label"
+      >In stock [pcs]:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="stock-name-id"
+        name="product-stock"
+        min="0"
+        step="1"
+        placeholder="0"
+        required
+      >
+      <label
+        for="brand-name-id"
+        class="form-label"
+      >Brand:</label>
+      <input
+        type="text"
+        maxlength="32"
+        class="form-control"
+        id="brand-name-id"
+        name="product-brand"
+        placeholder="Place brand name here"
+        required
+      >
+    </div>
+    <button type="submit" class="btn btn-lg btn-primary">Add</button>
+  </form>
+  {% include 'products/back-to-products-list.html' %}
+
+{% endblock %}
