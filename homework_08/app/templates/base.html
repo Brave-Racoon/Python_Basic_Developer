@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="shortcut icon" type="image/ico" href="{% static 'images/favicon.ico' %}">
+    <meta charset="UTF-8">
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+      >
+<style>
+    p.padding {padding-left: 20px;}
+</style>
+    {% block title %}
+        <title> Base </title>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+<footer>
+    <p> </p>
+    <p> </p>
+        {% block footer %}
+            Basic Python Developer course, OTUS 2023-2025
+        {% endblock %}
+    </footer>
+</html>

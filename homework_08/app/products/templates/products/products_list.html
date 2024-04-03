@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+    <h3>Products:</h3>
+{% endblock %}
+{% block content %}
+    <p> </p>
+    <a href="{% url 'index' %}">Home</a>
+    <p> </p>
+    <ul>
+        {% for product in object_list %}
+            <li><a href="{% url 'product-detail' product.id %}">{{product.title}}</a></li>
+        {% empty %}
+            <li>No products yet.</li>
+        {% endfor %}
+    </ul>
+    <p> </p>
+    <a href="{% url 'index' %}">Home</a>
+{% endblock %}}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+ <h3
+    id="main-header"
+    class="my-2"
+  >Домашнее задание. Взаимодействие между контейнерами</h3>
+
+  <h4>Описание/Пошаговая инструкция выполнения домашнего задания</h4>
+    <p>
+        <li>доработать своё приложение для отображения моделей на страницах</li>
+        <li>добавить страницы ListView и DetailView</li>
+    </p>
+  <h4>Критерии оценки:</h4>
+    <p>
+        <li>данные отображаются на страницах</li>
+        <li>есть кнопка для возвращения к списку</li>
+    </p>
+ <button type="button">
+   <a class="btn btn-to-list" href="{% url 'product-list' %}">To products list</a>
+ </button>
+{% endblock %}

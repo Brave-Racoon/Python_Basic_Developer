@@ -1,0 +1,6 @@
+asgiref==3.8.1
+Django==4.0
+parts==1.7.0
+products==1.2.0
+sqlparse==0.4.4
+tzdata==2024.1
