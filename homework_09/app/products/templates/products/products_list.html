@@ -6,21 +6,23 @@
      </div>
 {% endblock %}
 {% block content %}
-    {% if user.is_authenticated %}
-        <h5>Welcome, {{user.username}}!</h5>
-    {% else %}
-        <a href="/auth/login/">Log in</a>
-    {% endif %}
-    <p> </p>
-    <a href="{% url 'index' %}">Home</a>
-    <p> </p>
-    <ul>
-        {% for product in object_list %}
-            <li><a href="{% url 'product-detail' product.id %}">{{product.title}}</a></li>
-        {% empty %}
-            <li>No products yet.</li>
-        {% endfor %}
-    </ul>
-    <p> </p>
-    <a href="{% url 'index' %}">Home</a>
+<div class="m-sm-4">
+        {% if user.is_authenticated %}
+            <h5>Welcome, {{user.username}}!</h5>
+        {% else %}
+            <a href="/auth/login/">Log in</a>
+        {% endif %}
+        <p> </p>
+        <a href="{% url 'index' %}">Home</a>
+        <p> </p>
+        <ul>
+            {% for product in object_list %}
+                <li><a href="{% url 'product-detail' product.id %}">{{product.title}}</a></li>
+            {% empty %}
+                <li>No products yet.</li>
+            {% endfor %}
+        </ul>
+        <p> </p>
+        <a href="{% url 'index' %}">Home</a>
+</div>
 {% endblock %}}

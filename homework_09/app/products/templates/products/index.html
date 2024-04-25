@@ -8,43 +8,44 @@
 {% endblock %}
 
 {% block content %}
- <h4 id="main-header" class="ml-3">
-  Домашнее задание №09. Тестирование Django приложения</h4>
+<div class="m-sm-4">
+     <h4>Домашнее задание №09. Тестирование Django приложения</h4>
 
-  <h5>Описание/Пошаговая инструкция выполнения домашнего задания</h5>
-    <p>
-        <li>выполнить тестирование своего приложения</li>
-        <li>использовать setUp, tearDown</li>
-        <li>проверять контекст</li>
-    </p>
-  <h5>Критерии оценки:</h5>
-    <p>
-        <li>выполняется тестирование</li>
-        <li>в setUp, tearDown создаются и удаляются модели для тестирования</li>
-        <li>проверяется контекст</li>
-    </p>
-<div class="d-flex gap-2 py-1 px-8">
-  {% if user.is_authenticated %}
+      <h5>Описание/Пошаговая инструкция выполнения домашнего задания</h5>
+        <p>
+            <li>выполнить тестирование своего приложения</li>
+            <li>использовать setUp, tearDown</li>
+            <li>проверять контекст</li>
+        </p>
+      <h5>Критерии оценки:</h5>
+        <p>
+            <li>выполняется тестирование</li>
+            <li>в setUp, tearDown создаются и удаляются модели для тестирования</li>
+            <li>проверяется контекст</li>
+        </p>
+    <div class="d-flex gap-2 py-1 px-8">
+      {% if user.is_authenticated %}
 
-      <button class="btn btn-primary rounded-pill px-2" type="button" onclick="location.href = {% url 'product-list' %}">To products list
-       <!-- <a href="{% url 'product-list' %}">To products list</a> -->
-
-      </button>
-      <!-- <p> </p> -->
-      <form action="{% url 'register' %}" method="post">
-          {% csrf_token %}
-          <button class="btn btn-primary rounded-pill px-2" type="submit">Create User</button>
-      </form>
-      <!-- <p></p> -->
-      <form action="{% url 'logout' %}" method="post">
-         {% csrf_token %}
-         <button class="btn btn-primary rounded-pill px-2" type="submit">Logout</button>
-      </form>
-  {% else %}
-      <a href="{% url 'login' %}">
-          <button class="btn btn-primary rounded-pill px-2">Log In</button>
-      </a>
-  {% endif %}
+          <button class="btn btn-primary px-2" type="button" onclick="location.href = {% url 'product-list' %}">To products list
+          </button>
+          <!-- <p> </p> -->
+          <!-- <form action="{% url 'register' %}" method="post">
+              {% csrf_token %}
+              <button class="btn btn-primary px-2" type="submit">Create User</button>
+          </form> -->
+          <a href="{% url 'register' %}">
+              <button class="btn btn-primary px-2">Create User</button>
+          </a>
+          <!-- <p></p> -->
+          <form action="{% url 'logout' %}" method="post">
+             {% csrf_token %}
+             <button class="btn btn-primary px-2" type="submit">Logout</button>
+          </form>
+      {% else %}
+          <a href="{% url 'login' %}">
+              <button class="btn btn-primary px-2">Log In</button>
+          </a>
+      {% endif %}
+    </div>
 </div>
-
 {% endblock %}

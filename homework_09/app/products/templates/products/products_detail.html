@@ -8,13 +8,15 @@
 {% endblock %}
 
 {% block content %}
-  <h5>{{ object.title }}:</h5>
-  <p class="padding">   Description: {{ object.description }}</p>
-  <p class="padding">   Price: {{ object.price }}$</p>
-  <p class="padding">   Discount: {{ object.discountPercentage }}%</p>
-  <p class="padding">   Rating: {{ object.rating }}</p>
-  <p class="padding">   In stock: {{ object.stock }}</p>
-  <p class="padding">   Brand: {{ object.brand }}</p>
-  <p></p>
-  <button class="btn btn-primary rounded-pill px-2" type="button" onclick="location.href = {% url 'product-list' %}">To products list</button>
+<div class="m-sm-4">
+      <h5>{{ object.title }}:</h5>
+      <p class="padding">   Description: {{ object.description }}</p>
+      <p class="padding">   Price: {{ object.price }}$</p>
+      <p class="padding">   Discount: {{ object.discountPercentage }}%</p>
+      <p class="padding">   Rating: {{ object.rating }}</p>
+      <p class="padding">   In stock: {{ object.stock }}</p>
+      <p class="padding">   Brand: {{ object.brand }}</p>
+      <p></p>
+      <button class="btn btn-primary px-2" type="button" onclick="location.href = {% url 'product-list' %}">To products list</button>
+</div>
 {% endblock %}}

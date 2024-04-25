@@ -1,12 +1,13 @@
 {% extends 'base.html'%}
 
-{% load crispy_forms_tags %}
+<!-- {% load crispy_forms_tags %} -->
 
 {% block title %} <h3>Login:</h3> {% endblock %}
 
 
 {% block content %}
-    <form class="form-horizontal" style="width:30%;" method="post">
+<div class="m-sm-4">
+    <form class="form-horizontal" style="width:200px;" method="post">
         {% csrf_token %}
         <!-- {{ form.as_p }} -->
         {{ form|crispy }}
@@ -14,4 +15,5 @@
         <!-- <input type="submit" value="login"> -->
         <button type="submit" class="btn btn-success">Login</button>
     </form>
+</div>
 {% endblock %}
