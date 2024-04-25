@@ -1,44 +1,50 @@
 {% extends 'base.html' %}
 
-{% block title %} Home {% endblock %}
+{% block title %}
+        <div class="pb-3 mr-5 mt-3 mb-3 border-bottom" style="width:50%;">
+            <h5>Home</h5>
+    <!-- Some other text here. -->
+     </div>
+{% endblock %}
 
 {% block content %}
- <h3
-    id="main-header"
-    class="my-2"
-  >Домашнее задание №09. Тестирование Django приложения</h3>
+ <h4 id="main-header" class="ml-3">
+  Домашнее задание №09. Тестирование Django приложения</h4>
 
-  <h4>Описание/Пошаговая инструкция выполнения домашнего задания</h4>
+  <h5>Описание/Пошаговая инструкция выполнения домашнего задания</h5>
     <p>
         <li>выполнить тестирование своего приложения</li>
         <li>использовать setUp, tearDown</li>
         <li>проверять контекст</li>
     </p>
-  <h4>Критерии оценки:</h4>
+  <h5>Критерии оценки:</h5>
     <p>
         <li>выполняется тестирование</li>
         <li>в setUp, tearDown создаются и удаляются модели для тестирования</li>
         <li>проверяется контекст</li>
     </p>
-
+<div class="d-flex gap-2 py-1 px-8">
   {% if user.is_authenticated %}
 
-      <button type="button">
-       <a class="btn btn-to-list" href="{% url 'product-list' %}">To products list</a>
+      <button class="btn btn-primary rounded-pill px-2" type="button" onclick="location.href = {% url 'product-list' %}">To products list
+       <!-- <a href="{% url 'product-list' %}">To products list</a> -->
+
       </button>
-      <p> </p>
+      <!-- <p> </p> -->
       <form action="{% url 'register' %}" method="post">
           {% csrf_token %}
-          <button type="submit">Create User</button>
+          <button class="btn btn-primary rounded-pill px-2" type="submit">Create User</button>
       </form>
-      <p></p>
+      <!-- <p></p> -->
       <form action="{% url 'logout' %}" method="post">
          {% csrf_token %}
-         <button type="submit">Logout</button>
+         <button class="btn btn-primary rounded-pill px-2" type="submit">Logout</button>
       </form>
   {% else %}
-      <button type="button">
-       <a class="btn btn-login" href="{% url 'login' %}">Log In</a>
-      </button>
+      <a href="{% url 'login' %}">
+          <button class="btn btn-primary rounded-pill px-2">Log In</button>
+      </a>
   {% endif %}
+</div>
+
 {% endblock %}

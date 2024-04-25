@@ -9,3 +9,4 @@ class MyUserCreateView(CreateView):
     model = ClientUser
     success_url = '/'
     form_class = MyUserCreateForm
+    #fields = ['username', 'email', 'password1', 'password2', 'aboutfield']

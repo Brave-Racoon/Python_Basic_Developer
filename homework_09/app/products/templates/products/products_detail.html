@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<h3>Product details</h3>
+        <div class="pb-3 mr-5 mt-3 mb-3 border-bottom" style="width:50%;">
+            <h4>Product detail:</h4>
+        <!-- Some other text here. -->
+        </div>
 {% endblock %}
 
 {% block content %}
-  <h4>{{ object.title }}:</h4>
+  <h5>{{ object.title }}:</h5>
   <p class="padding">   Description: {{ object.description }}</p>
   <p class="padding">   Price: {{ object.price }}$</p>
   <p class="padding">   Discount: {{ object.discountPercentage }}%</p>
@@ -13,7 +16,5 @@
   <p class="padding">   In stock: {{ object.stock }}</p>
   <p class="padding">   Brand: {{ object.brand }}</p>
   <p></p>
-  <button type="button">
-    <a class="btn btn-uplevel" href="{% url 'product-list' %}">Back to the list</a>
-  </button>
+  <button class="btn btn-primary rounded-pill px-2" type="button" onclick="location.href = {% url 'product-list' %}">To products list</button>
 {% endblock %}}
